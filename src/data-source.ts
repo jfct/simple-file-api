@@ -1,8 +1,8 @@
 import * as dotenv from "dotenv";
 import { DataSource } from "typeorm";
-import { File } from "./entity/file";
-import { Group } from "./entity/group";
-import { User } from "./entity/user";
+import { File } from "./entity/file.entity";
+import { Group } from "./entity/group.entity";
+import { User } from "./entity/user.entity";
 
 // Load environment variables from .env file
 dotenv.config();
