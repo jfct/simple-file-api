@@ -1,12 +1,10 @@
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import { File } from "./file";
-import { Group } from "./group";
+import { Column, Entity, JoinTable, ManyToMany } from "typeorm";
+import { File } from "./file.entity";
+import { GenericEntity } from "./generic.entity";
+import { Group } from "./group.entity";
 
 @Entity("users")
-export class User {
-    @PrimaryGeneratedColumn()
-    id: number;
-
+export class User extends GenericEntity {
     @Column()
     name: string;
 
