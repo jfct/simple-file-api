@@ -1,6 +1,6 @@
 import { Column, Entity, JoinTable, ManyToMany } from "typeorm";
-import { GenericEntity } from "./base.entity";
 import { File } from "./file.entity";
+import { GenericEntity } from "./generic.entity";
 import { Group } from "./group.entity";
 
 @Entity("users")

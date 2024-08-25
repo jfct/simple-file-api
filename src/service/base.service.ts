@@ -1,5 +1,5 @@
 import { DeepPartial, FindOptionsWhere, Repository } from "typeorm";
-import { GenericEntity } from "../entity/base.entity";
+import { GenericEntity } from "../entity/generic.entity";
 
 // We extend the Generic entity so we know all entities have the Id
 // Done for the findById method that was not matching correctly without this
