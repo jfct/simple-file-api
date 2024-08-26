@@ -12,6 +12,7 @@ to go with the query builder for readability, but personally I would rather have
 ## How to start
 
 1. Just run the `docker-compose up`
+2. App will be running on default `:3000`
 
 I also added a pgadmin for easy views of the db. Just have to login with the user:`user@example.com`  pwd: `admin`. 
 The migrations should run directly in the container and DB, there's also a healthcheck retry for the pg db that is used on app start, so the app will only start when the db is up and running
