@@ -1,5 +1,6 @@
 import { DeepPartial, FindOptionsWhere, Repository } from "typeorm";
 import { GenericEntity } from "../entity/generic.entity";
+import { NotFoundException } from "../errors/notfound.exception";
 
 // We extend the Generic entity so we know all entities have the Id
 // Done for the findById method that was not matching correctly without this
@@ -25,7 +26,7 @@ export abstract class BaseService<T extends GenericEntity> {
         const entity = await this.findById(id);
 
         if (!entity) {
-            return null;
+            throw new NotFoundException("No entity found");
         }
 
         Object.assign(entity, entityLike);

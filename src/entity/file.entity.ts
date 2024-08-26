@@ -1,18 +1,16 @@
 import { Column, Entity, JoinTable, ManyToMany } from "typeorm";
 import { GenericEntity } from "./generic.entity";
 import { Group } from "./group.entity";
-import { User } from "./user.entity";
 
 @Entity("files")
 export class File extends GenericEntity {
-    @Column()
+    @Column({
+        unique: true
+    })
     name: string;
 
     @Column()
     risk: number;
-
-    @ManyToMany(() => User, user => user.files)
-    users: User[];
 
     @ManyToMany(() => Group, group => group.files)
     @JoinTable({

@@ -1,11 +1,10 @@
 import { Column, Entity, JoinTable, ManyToMany } from "typeorm";
-import { File } from "./file.entity";
 import { GenericEntity } from "./generic.entity";
 import { Group } from "./group.entity";
 
 @Entity("users")
 export class User extends GenericEntity {
-    @Column()
+    @Column({ unique: true })
     name: string;
 
     @ManyToMany(() => Group, group => group.users)
@@ -21,18 +20,4 @@ export class User extends GenericEntity {
         }
     })
     groups: Group[];
-
-    @ManyToMany(() => File, file => file.users)
-    @JoinTable({
-        name: "file_users",
-        joinColumn: {
-            name: "user_id",
-            referencedColumnName: "id"
-        },
-        inverseJoinColumn: {
-            name: "file_id",
-            referencedColumnName: "id"
-        }
-    })
-    files: File[];
 }
