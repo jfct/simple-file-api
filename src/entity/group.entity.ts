@@ -5,7 +5,9 @@ import { User } from "./user.entity";
 
 @Entity("groups")
 export class Group extends GenericEntity {
-    @Column()
+    @Column({
+        unique: true
+    })
     name: string;
 
     @ManyToMany(() => User, user => user.groups)
