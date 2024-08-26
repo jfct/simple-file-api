@@ -39,7 +39,6 @@ services:
   app:
     build: .
     container_name: app
-    working_dir: /usr/src/app
     environment:
       DB_HOST: db
       DB_PORT: 5432
