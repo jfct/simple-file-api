@@ -1,0 +1,117 @@
+{
+    "info": {
+        "name": "File_Api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create file",
+            "event": [],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": "http://localhost:3000/api/file/",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"user\",\n  \"risk\": 1,\n  \"groups\": []\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Create user",
+            "event": [],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": "http://localhost:3000/api/user",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"john doe\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "get file",
+            "event": [],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": "http://localhost:3000/api/file/"
+            }
+        },
+        {
+            "name": "Create group",
+            "event": [],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": "http://localhost:3000/api/group/",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"New group\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get User",
+            "event": [],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": "http://localhost:3000/api/user/1"
+            }
+        },
+        {
+            "name": "Get Group",
+            "event": [],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": "http://localhost:3000/api/group/1"
+            }
+        },
+        {
+            "name": "Add user to group",
+            "event": [],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": "http://localhost:3000/api/group/1/user/1"
+            }
+        },
+        {
+            "name": "Get Top shared K",
+            "event": [],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": "http://localhost:3000/api/file/top-shared/1"
+            }
+        },
+        {
+            "name": "Add group to file",
+            "event": [],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": "http://localhost:3000/api/file/1/group/1"
+            }
+        }
+    ],
+    "variable": []
+}
