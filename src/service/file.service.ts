@@ -37,7 +37,8 @@ export class FileService extends BaseService<File> {
     async get(id: number): Promise<ResponseFileDto | null> {
         // Get all the groups associated to a file
         // Also get all the users from those groups
-        const file = await this.repository.createQueryBuilder("file")
+        const file = await this.repository
+            .createQueryBuilder("file")
             .innerJoinAndSelect("file.groups", "group")
             .innerJoinAndSelect("group.users", "user")
             .where("file.id = :id", { id })
@@ -51,7 +52,7 @@ export class FileService extends BaseService<File> {
         const groupIds: number[] = [];
 
         // We keep all the userids on a set, so we do not add duplicates!
-        file.groups.forEach(group => {
+        file.groups.forEach((group) => {
             groupIds.push(group.id);
             group.users.forEach(user => userIds.add(user.id));
         });

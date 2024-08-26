@@ -76,11 +76,10 @@ DELETE /:id
 
 ## Tools used
 
-Node.js
-postgresql
-
-pg library (postgres for node)
-typeorm (with reflect-metadata)
+-Node.js
+-postgresql
+-pg library (postgres for node)
+-typeorm (with reflect-metadata)
 
 ### typeorm
 
@@ -91,3 +90,12 @@ To generate a new migration (after changes to entities) just run `npm run migrat
 To run `npm run migration:run`
 
 To revert `npm run migration:revert`
+
+### pgadmin
+
+If you want to use pgadmin to check the db information, to login just open the `localhost:8080` and use the user:`user@example.com`  pwd: `admin`. to login. After logged, just register the server with the following information:
+-host: db
+-username: admin
+-pwd: admin
+
+And you should find the `file_db` database

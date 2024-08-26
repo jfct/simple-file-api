@@ -1,4 +1,5 @@
 import * as dotenv from "dotenv";
+import { join } from "path";
 import { DataSource } from "typeorm";
 
 // Load environment variables from .env file
@@ -13,7 +14,7 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_NAME || "test",
     synchronize: false,
     logging: false,
-    entities: [(process.env.ENV == 'local' ? 'src/entity/*.ts' : 'dist/entity/*.js')],
-    migrations: [(process.env.ENV == 'local' ? 'src/migration/*.ts' : 'dist/migration/*.js')],
+    entities: [join(__dirname, "../entity/**/*.js")],
+    migrations: [join(__dirname, "../migration/**/*.js")],
     subscribers: [],
 })
