@@ -154,6 +154,7 @@ export class FileService extends BaseService<File> {
 
         const fileMap: ResponseTopShared[] = []
 
+        // Remove duplicate users
         filesWithUsers.forEach(row => {
             // Find the file object in the files array
             let file = fileMap.find(f => f.name === row.filename);
@@ -172,10 +173,9 @@ export class FileService extends BaseService<File> {
             file.users.push(row.name);
         });
 
-        return Array.from(fileMap.values()).map(file => ({
-            ...file,
-            users: Array.from(file.users)
-        }));
+        // Sort the users so they are presented in desc order
+        return fileMap.sort((a, b) => b.users.length - a.users.length);
+
     }
 
 }
